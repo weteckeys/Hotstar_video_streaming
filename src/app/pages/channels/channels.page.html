@@ -1,0 +1,21 @@
+<ion-header mode="md">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Channels</ion-title>
+        <ion-button class="search_btn" slot="end" fill="clear" size="small">
+            <ion-icon name="search" color="light"></ion-icon>
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="main_content_div">
+        <ion-row>
+            <ion-col size="6" *ngFor="let item of images">
+                <div class="back_image bg_image" [style.backgroundImage]="'url('+ item +')'"></div>    
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-content>

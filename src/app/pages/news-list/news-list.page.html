@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+    <div class="video_div" *ngFor="let item of news">
+      <ion-label class="time">4 min</ion-label>
+      <video width="100%" height="240" controls poster="{{item.img}}" >
+        <source src="assets/imgs/news/video.mp4" type="video/mp4">
+      </video>
+      <ion-label class="title_lbl">{{item.name}}</ion-label>
+      <div class="flex_div">
+        <div>
+          <img src="{{item.icn}}" alt="">
+        </div>
+        <div style="padding-left: 8px;">
+          <ion-label class="top_lbl">Star News</ion-label>
+          <ion-label class="light_lbl">3h ago</ion-label>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

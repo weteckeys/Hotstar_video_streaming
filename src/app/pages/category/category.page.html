@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <span *ngIf="title == 'Best in Genres'">
+      <ion-grid fixed *ngFor="let itemm of [1,2]">
+        <ion-row>
+          <ion-col size="6" *ngFor="let item of genrens">
+            <div class="back_image bg_image" [style.backgroundImage]="'url('+item.img+')'">
+              <ion-label class="bold_lbl">{{item.name}}</ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </span>
+
+    <span *ngIf="title == 'Popular Sports'">
+      <ion-grid fixed *ngFor="let itemm of [1,2]">
+        <ion-row>
+          <ion-col size="6" *ngFor="let item of sports">
+            <div class="back_image bg_image" [style.backgroundImage]="'url('+item.img+')'">
+              <ion-label class="bold_lbl">{{item.s_name}}</ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </span>
+
+  </div>
+</ion-content>

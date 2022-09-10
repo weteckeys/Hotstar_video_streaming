@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+
+  <div class="segment_div">
+    <ion-label [class.active]="segId == 1" (click)="changeSegment(1)">VIDEOS</ion-label>
+    <ion-label [class.active]="segId == 2" (click)="changeSegment(2)">TOURNAMENTS</ion-label>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <span *ngIf="segId == 1">
+      <ion-slides mode="ios">
+        <ion-slide>
+          <div class="back_image bg_image" [style.backgroundImage]="'url(assets/imgs/img1.jpg)'"></div>
+        </ion-slide>
+        <ion-slide>
+          <div class="back_image bg_image" [style.backgroundImage]="'url(assets/imgs/img2.jpg)'"></div>
+        </ion-slide>
+        <ion-slide>
+          <div class="back_image bg_image" [style.backgroundImage]="'url(assets/imgs/img13.jpg)'"></div>
+        </ion-slide>
+      </ion-slides>
+  
+      <ion-label class="head_lbl" (click)="goToSportsVideo('IPL Superstar : MS Dhoni')">IPL Superstar : MS Dhoni<ion-icon name="chevron-forward-outline"></ion-icon></ion-label>
+      <ion-slides mode="ios" [options]="slideOpts3">
+        <ion-slide *ngFor="let item of sports" (click)="goToVideo()">
+          <div class="flex_div">
+            <div class="back_image4 bg_image" [style.backgroundImage]="'url('+item.img+')'"></div>
+            <ion-label class="live2">9 min</ion-label>
+            <div class="play_div">
+              <ion-icon name="caret-forward-outline" class="play"></ion-icon>
+              <ion-label class="name">{{item.name}}</ion-label>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slides>
+  
+      <ion-label class="head_lbl" (click)="goToSportsVideo('Best of CSK')">Best of CSK<ion-icon name="chevron-forward-outline"></ion-icon></ion-label>
+      <ion-slides mode="ios" [options]="slideOpts3">
+        <ion-slide *ngFor="let item of (sports | slice :2: 8)" (click)="goToVideo()">
+          <div class="flex_div">
+            <div class="back_image4 bg_image" [style.backgroundImage]="'url('+item.img+')'"></div>
+            <ion-label class="live2">9 min</ion-label>
+            <div class="play_div">
+              <ion-icon name="caret-forward-outline" class="play"></ion-icon>
+              <ion-label class="name">{{item.name}}</ion-label>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slides>
+  
+      <ion-label class="head_lbl" (click)="goToSportsVideo('Womens T20 World Cup')">Women's T20 World Cup<ion-icon name="chevron-forward-outline"></ion-icon></ion-label>
+      <ion-slides mode="ios" [options]="slideOpts3">
+        <ion-slide *ngFor="let item of (sports | slice : 3)" (click)="goToVideo()">
+          <div class="flex_div">
+            <div class="back_image4 bg_image" [style.backgroundImage]="'url('+item.img+')'"></div>
+            <ion-label class="live2">9 min</ion-label>
+            <div class="play_div">
+              <ion-icon name="caret-forward-outline" class="play"></ion-icon>
+              <ion-label class="name">{{item.name}}</ion-label>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </span>
+
+    <span *ngIf="segId == 2">
+      <div style="padding-left: 6px;padding-right: 6px;">
+        <ion-label class="top_lbl">Upcoming</ion-label>
+
+        <div class="div_flex" *ngFor="let item of (sports | slice : 0 : 2)">
+          <div class="back_small bg_image" [style.backgroundImage]="'url('+item.img+')'"></div>
+          <div class="desc_div">
+            <ion-label>{{item.name}}</ion-label>
+          </div>
+        </div>
+
+        <ion-label class="top_lbl">Concluded</ion-label>
+
+        <div class="div_flex" *ngFor="let item of (sports | slice : 0 : 4)">
+          <div class="back_small bg_image" [style.backgroundImage]="'url('+item.img+')'"></div>
+          <div class="desc_div">
+            <ion-label>{{item.name}}</ion-label>
+            <ion-label class="gray_lbl">09 Mar - 15 May</ion-label>
+          </div>
+        </div>
+
+      </div>
+    </span>
+    
+
+  </div>
+</ion-content>

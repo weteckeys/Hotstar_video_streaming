@@ -1,0 +1,122 @@
+<ion-app>
+    <ion-menu type="push" contentId="main" >
+        <ion-header>
+            
+        </ion-header>
+
+        <ion-content>
+            <ion-menu-toggle auto-hide="false">
+                <div class="menu_flex_div" (click)="goToLogin()">
+                    <div>
+                        <ion-icon name="person-circle-sharp"></ion-icon>
+                    </div>
+                    <div style="padding-left: 10px;">
+                        <ion-label class="bold_lbl">Log in to Hotstar</ion-label>
+                        <ion-label class="light_lbl">For a bettre experience</ion-label>
+                    </div>
+                </div>
+            </ion-menu-toggle>
+        
+            <ion-list style="background: transparent;">
+
+                <ion-menu-toggle auto-hide="false">
+                    <div class="menu_flex" (click)="goToDownloads()">
+                        <img class="menu_icn" src="assets/menu/inbox.png" alt="">
+                        <div>
+                            <ion-label class="bold_lbl">Downloads</ion-label>
+                            <ion-label class="small_lbl">Watch videos offline</ion-label>
+                        </div>
+                    </div>
+                </ion-menu-toggle>
+                
+
+                <ion-menu-toggle auto-hide="false">
+                    <div class="menu_flex" (click)="goToWatchlist()">
+                        <img class="menu_icn" src="assets/menu/list.png" alt="">
+                        <div>
+                            <ion-label class="bold_lbl">Watchlist</ion-label>
+                            <ion-label class="small_lbl">Save to Watch letter</ion-label>
+                        </div>
+                    </div>
+                </ion-menu-toggle>
+
+                <!-- <ion-menu-toggle auto-hide="false">
+                    <div class="menu_flex">
+                        <img class="menu_icn" src="assets/menu/prize.png" alt="">
+                        <div>
+                            <ion-label class="bold_lbl">Prizes</ion-label>
+                            <ion-label class="small_lbl">Prizes you have won</ion-label>
+                        </div>
+                    </div>
+                </ion-menu-toggle> -->
+
+                <ion-menu-toggle auto-hide="false">
+                    <div class="menu_flex" (click)="goToMovies()">
+                        <img class="menu_icn" src="assets/menu/clap.png" alt="">
+                        <div>
+                            <ion-label class="bold_lbl">Movies</ion-label>
+                        </div>
+                    </div>
+                </ion-menu-toggle>
+
+                <ion-menu-toggle auto-hide="false">
+                    <div class="menu_flex" (click)="goToPremium()">
+                        <img class="menu_icn" src="assets/menu/crown.png" alt="">
+                        <div>
+                            <ion-label class="bold_lbl">Premium</ion-label>
+                        </div>
+                    </div>
+                </ion-menu-toggle>
+
+                <ion-menu-toggle auto-hide="false">
+                    <div class="menu_flex">
+                        <img class="menu_icn" src="assets/menu/flash.png" alt="">
+                        <div>
+                            <ion-label class="bold_lbl">Trending</ion-label>
+                        </div>
+                    </div>
+                </ion-menu-toggle>
+
+                <ion-menu-toggle auto-hide="false">
+                    <div class="menu_flex" (click)="goToChannels()">
+                        <img class="menu_icn" src="assets/menu/folder.png" alt="">
+                        <div>
+                            <ion-label class="bold_lbl">Channels</ion-label>
+                        </div>
+                    </div>
+                </ion-menu-toggle>
+
+                <ion-menu-toggle auto-hide="false">
+                    <div class="menu_flex" (click)="goToLanguages()">
+                        <img class="menu_icn" src="assets/menu/language.png" alt="">
+                        <div>
+                            <ion-label class="bold_lbl">Languages</ion-label>
+                        </div>
+                    </div>
+                </ion-menu-toggle>
+
+                <ion-menu-toggle auto-hide="false">
+                    <div class="menu_flex" (click)="goToGenres()">
+                        <img class="menu_icn" src="assets/menu/mask.png" alt="">
+                        <div>
+                            <ion-label class="bold_lbl">Genres</ion-label>
+                        </div>
+                    </div>
+                </ion-menu-toggle>
+
+                <ion-menu-toggle auto-hide="false">
+                    <div class="menu_flex">
+                        <img class="menu_icn" src="assets/menu/question.png" alt="">
+                        <div>
+                            <ion-label class="bold_lbl">Help</ion-label>
+                        </div>
+                    </div>
+                </ion-menu-toggle>
+
+            </ion-list>
+
+        </ion-content>
+
+    </ion-menu>
+    <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

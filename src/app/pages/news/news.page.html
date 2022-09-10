@@ -1,0 +1,106 @@
+<ion-header>
+    <div class="header_div">
+        <ion-buttons slot="start">
+            <ion-menu-button color="light"></ion-menu-button>
+        </ion-buttons>
+        <img src="assets/imgs/logo4.svg">
+        <ion-button class="search_btn" slot="end" fill="clear" size="small">
+            <ion-icon slot="icon-only" name="search-outline" color="light"></ion-icon>
+        </ion-button>
+    </div>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+    <ion-label class="head_lbl">Live News</ion-label>
+    <ion-slides mode="ios" [options]="slideOpts">
+      <ion-slide *ngFor="let item of reporter">
+        <div style="width: 100%;">
+        <div class="back_image2 bg_image" [style.backgroundImage]="'url('+item.img+')'"></div>
+          <div class="flex_div">
+            <div>
+              <img src="{{item.icn}}" alt="">
+            </div>
+            <div style="padding-left: 5px;">
+              <ion-label class="top_lbl">Star News</ion-label>
+              <ion-label class="light_lbl">3h ago</ion-label>
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slides>
+
+    <ion-label class="head_lbl">Coronavirus Crisis <ion-icon name="chevron-forward-outline"></ion-icon></ion-label>
+
+    <div class="video_div" *ngFor="let item of (news | slice :0: 3)">
+      <ion-label class="time">4 min</ion-label>
+      <video width="100%" height="240" controls poster="{{item.img}}" >
+        <source src="assets/imgs/news/video.mp4" type="video/mp4">
+      </video>
+      <ion-label class="title_lbl">{{item.name}}</ion-label>
+      <div class="flex_div">
+        <div>
+          <img src="{{item.icn}}" alt="">
+        </div>
+        <div style="padding-left: 8px;">
+          <ion-label class="top_lbl">Star News</ion-label>
+          <ion-label class="light_lbl">3h ago</ion-label>
+        </div>
+      </div>
+    </div>
+
+    <ion-button (click)="goToNewsList('Coronavirus Crisis')" expand="block" fill="clear">
+      See All Coronavirus Crisis
+      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+    </ion-button>
+
+    <ion-label class="head_lbl">Entertainment <ion-icon name="chevron-forward-outline"></ion-icon></ion-label>
+
+    <div class="video_div" *ngFor="let item of (news | slice :3: 6)">
+      <ion-label class="time">4 min</ion-label>
+      <video width="100%" height="240" controls poster="{{item.img}}" >
+        <source src="assets/imgs/news/video.mp4" type="video/mp4">
+      </video>
+      <ion-label class="title_lbl">{{item.name}}</ion-label>
+      <div class="flex_div">
+        <div>
+          <img src="{{item.icn}}" alt="">
+        </div>
+        <div style="padding-left: 8px;">
+          <ion-label class="top_lbl">Star News</ion-label>
+          <ion-label class="light_lbl">3h ago</ion-label>
+        </div>
+      </div>
+    </div>
+
+    <ion-button (click)="goToNewsList('Entertainment')" expand="block" fill="clear">
+      See All Entertainment
+      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+    </ion-button>
+
+    <ion-label class="head_lbl">Trending News</ion-label>
+
+    <div class="video_div" *ngFor="let item of (news | slice :0: 3)">
+      <ion-label class="time">4 min</ion-label>
+      <video width="100%" height="240" controls poster="{{item.img}}" >
+        <source src="assets/imgs/news/video.mp4" type="video/mp4">
+      </video>
+      <ion-label class="title_lbl">{{item.name}}</ion-label>
+      <div class="flex_div">
+        <div>
+          <img src="{{item.icn}}" alt="">
+        </div>
+        <div style="padding-left: 8px;">
+          <ion-label class="top_lbl">Star News</ion-label>
+          <ion-label class="light_lbl">3h ago</ion-label>
+        </div>
+      </div>
+    </div>
+
+    <ion-button (click)="goToNewsList('Trending News')" expand="block" fill="clear">
+      See All Trending News
+      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+    </ion-button>
+
+  </div>
+</ion-content>

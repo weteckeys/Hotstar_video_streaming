@@ -1,0 +1,27 @@
+<ion-header mode="md">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Downloads</ion-title>
+        <ion-button class="search_btn" slot="end" fill="clear" size="small">
+            <ion-icon name="pencil-sharp" color="light"></ion-icon>
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="main_content_div">
+        <div class="flex_div" *ngFor="let item of images">
+            <div class="back_image bg_image" [style.backgroundImage]="'url('+item.img+')'">
+                <ion-label class="live2">9 min</ion-label>
+                <div class="play_div">
+                  <ion-icon name="caret-forward-outline" class="play"></ion-icon>
+                  <ion-label class="name">{{item.name}}</ion-label>
+                </div>
+            </div>
+            <ion-label class="name_lbl">{{item.name}}</ion-label>
+            <ion-icon class="menu" name="ellipsis-vertical"></ion-icon>
+        </div>
+    </div>
+</ion-content>

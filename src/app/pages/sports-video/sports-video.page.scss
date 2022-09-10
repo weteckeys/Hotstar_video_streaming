@@ -1,0 +1,64 @@
+ion-title{
+    padding: 0;
+}
+.main_content_div{
+    width: 100%;
+
+    .back_image4{
+        height: 100px;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .flex_div{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+
+        .name{
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .live{
+            position: absolute;
+            top: 0;
+            font-size: 12px;
+            font-family: 'medium';
+            left: 8px;
+        }
+
+        .live2{
+            position: absolute;
+            top: 0;
+            font-size: 12px;
+            font-family: 'medium';
+            right: 8px;
+        }
+
+        .bold_lbl{
+            font-family: 'semi-bold';
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-transform: uppercase;
+        }
+
+        .play_div{
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            .play{
+                font-size: 20px;
+                margin-right: 10px;
+            }
+            .name{
+                font-size: 14px;
+                margin-top: 0px;
+            }
+        }
+    }
+}

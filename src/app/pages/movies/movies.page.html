@@ -1,0 +1,59 @@
+<ion-header mode="md">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Movies</ion-title>
+        <ion-button class="search_btn" slot="end" fill="clear" size="small">
+            <ion-icon name="pencil-sharp" color="light"></ion-icon>
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="main_content_div">
+        <ion-slides mode="ios">
+            <ion-slide *ngFor="let item of mainSlider; let i = index">
+                <div class="back_image bg_image" [style.backgroundImage]="'url('+item+')'">
+                    <ion-label>{{i+1}}/{{mainSlider?.length}}</ion-label>
+                </div>
+            </ion-slide>
+        </ion-slides>
+
+      <ion-label class="head_lbl" (click)="goTovideoList('Top picks for you')">Top picks for you <ion-icon name="chevron-forward-outline"></ion-icon></ion-label>
+      <ion-slides mode="ios" [options]="slideOpts">
+        <ion-slide *ngFor="let item of images" (click)="goToVideo()">
+          <div class="back_image2 bg_image" [style.backgroundImage]="'url('+item.img+')'"></div>
+        </ion-slide>
+      </ion-slides>
+
+      <ion-label class="head_lbl" (click)="goTovideoList('Popular Movies')">Popular Movies <ion-icon name="chevron-forward-outline"></ion-icon></ion-label>
+      <ion-slides mode="ios" [options]="slideOpts">
+        <ion-slide *ngFor="let item of (images | slice : 4 : 10)" (click)="goToVideo()">
+          <div class="back_image2 bg_image" [style.backgroundImage]="'url('+item.img+')'"></div>
+        </ion-slide>
+      </ion-slides>
+
+      <ion-label class="head_lbl" (click)="goTovideoList('Popular in Romance')">Popular in Romance <ion-icon name="chevron-forward-outline"></ion-icon></ion-label>
+      <ion-slides mode="ios" [options]="slideOpts">
+        <ion-slide *ngFor="let item of (images | slice : 8 : 18)" (click)="goToVideo()">
+          <div class="back_image2 bg_image" [style.backgroundImage]="'url('+item.img+')'"></div>
+        </ion-slide>
+      </ion-slides>
+
+      <ion-label class="head_lbl" (click)="goTovideoList('Popular in Action')">Popular in Action <ion-icon name="chevron-forward-outline"></ion-icon></ion-label>
+      <ion-slides mode="ios" [options]="slideOpts">
+        <ion-slide *ngFor="let item of (images | slice : 7 : 18)" (click)="goToVideo()">
+          <div class="back_image2 bg_image" [style.backgroundImage]="'url('+item.img+')'"></div>
+        </ion-slide>
+      </ion-slides>
+
+      <ion-label class="head_lbl" (click)="goTovideoList('Popular in Comedy')">Popular in Comedy <ion-icon name="chevron-forward-outline"></ion-icon></ion-label>
+      <ion-slides mode="ios" [options]="slideOpts">
+        <ion-slide *ngFor="let item of animals" (click)="goToVideo()">
+          <div class="back_image2 bg_image" [style.backgroundImage]="'url('+item.img+')'"></div>
+        </ion-slide>
+      </ion-slides>
+
+    </div>
+</ion-content>

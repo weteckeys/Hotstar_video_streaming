@@ -1,0 +1,7 @@
+{
+  "name": "hotstar-clone",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

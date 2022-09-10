@@ -1,0 +1,132 @@
+.segment_div{
+    display: flex;
+    margin-top: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    ion-label {
+        margin-right: 30px;
+        color: white;
+        padding-bottom: 10px;
+        font-family: 'medium';
+        font-size: 12px;
+    }
+    .active{
+        border-bottom: 2px solid white;
+    }
+}
+.main_content_div{
+    width: 100%;
+    padding: 10px;
+
+    ion-label {
+        display: block;
+    }
+
+    .back_image{
+        height: 200px;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .head_lbl{
+        font-family: 'medium';
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        position: relative;
+        ion-icon{
+            position: absolute;
+            right: 0;
+            font-size: 20px;
+            color: #707070;
+        }
+    }
+    ion-slide{
+        margin-right: 7px;
+    }
+
+    .back_image4{
+        height: 100px;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .flex_div{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .name{
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .live{
+            position: absolute;
+            top: 0;
+            font-size: 12px;
+            font-family: 'medium';
+            left: 8px;
+        }
+
+        .live2{
+            position: absolute;
+            top: 0;
+            font-size: 12px;
+            font-family: 'medium';
+            right: 8px;
+        }
+
+        .bold_lbl{
+            font-family: 'semi-bold';
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-transform: uppercase;
+        }
+
+        .play_div{
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            .play{
+                font-size: 20px;
+                margin-right: 10px;
+            }
+            .name{
+                font-size: 14px;
+                margin-top: 0px;
+            }
+        }
+    }
+
+    .top_lbl{
+        font-family: 'medium';
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #707070;
+    }
+
+    .div_flex{
+        display: flex;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #707070;
+        .back_small{
+            width: 90px;
+            height:55px;
+            min-width: 90px;
+        }
+        .desc_div{
+            padding-left: 15px;
+        }
+
+        .gray_lbl{
+            font-size: 12px;
+            color: gray;
+            margin-top: 7px;
+        }
+    }
+}
